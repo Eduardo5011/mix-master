@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.nav`
   background: var(--white);
@@ -24,15 +24,12 @@ const Wrapper = styled.nav`
   }
   .nav-link {
     color: var(--grey-900);
-    padding: 0.5rem 0.5rem 0.5rem 0;
+    padding: 0%.5rem 0.5rem 0.5rem 0;
     transition: var(--transition);
     letter-spacing: 2px;
   }
   .nav-link:hover {
-    color: var(--primary-500);
-  }
-  .active {
-    color: var(--primary-500);
+    color: var(--grey-500);
   }
   @media (min-width: 768px) {
     .nav-center {
