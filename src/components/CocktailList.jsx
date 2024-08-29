@@ -21,9 +21,10 @@ const CocktailList = ({ drinks }) => {
   return (
     <Wrapper>
       {formattedDrinks.map((item) => {
-        <CocktailCard key={item.id} {...item} />;
+       return <CocktailCard key={item.id} {...item} />;
       })}
     </Wrapper>
+    
   );
 };
 
