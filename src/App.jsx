@@ -1,38 +1,46 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { About, HomeLayout, Landing, Error, Newsletter, Cocktail } from "./pages";
+import {
+  About,
+  HomeLayout,
+  Landing,
+  Error,
+  Newsletter,
+  Cocktail,
+  SinglePageError,
+} from "./pages";
 
-import {loader as landingLoader} from './pages/Landing'
+import { loader as landingLoader } from "./pages/Landing";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomeLayout/>,
-    errorElement: <Error/>,
-    children:[
+    element: <HomeLayout />,
+    errorElement: <Error />,
+    children: [
       {
         index: true,
-        element: <Landing/>,
-        loader: landingLoader
+        element: <Landing />,
+        errorElement: <SinglePageError />,
+        loader: landingLoader,
       },
       {
         path: "cocktail",
-        element: <Cocktail/>
+        element: <Cocktail />,
       },
       {
         path: "newsletter",
-        element: <Newsletter/>
+        element: <Newsletter />,
       },
       {
         path: "about",
-        element: <About/>
+        element: <About />,
       },
-    ]
+    ],
   },
-  
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />
+  return <RouterProvider router={router} />;
 };
 export default App;
