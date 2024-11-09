@@ -5,12 +5,12 @@ import CocktailList from "../components/CocktailList";
 import SearchForm from "../components/SearchForm";
 
 const cocktailSearchUrl =
-  "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+  "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=a";
 
 export const loader = async ({request}) => {
   const url = new URL(request.url);
 
-  const searchTerm = url.searchParams.get('search') || "margarita";
+  const searchTerm = url.searchParams.get('search') || "";
   const response = await axios.get(`${cocktailSearchUrl}${searchTerm}`);
   console.log(response.data);
   return { drinks: response.data.drinks, searchTerm };
